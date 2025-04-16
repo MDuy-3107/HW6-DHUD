@@ -1,0 +1,65 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    max-width: 1350px; /* Giới hạn chiều rộng tối đa của container */
+}
+
+.video-container,
+.canvas-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    flex: 1; /* Cho phép các container co giãn */
+    min-width: 320px; /* Đảm bảo không quá nhỏ */
+    display: flex; /* Sắp xếp h2 và video/canvas */
+    flex-direction: column;
+    align-items: center; /* Căn giữa nội dung bên trong */
+}
+
+video, canvas {
+    display: block;
+    /* Kích thước được đặt trong HTML, CSS chỉ đảm bảo nó không tràn */
+    max-width: 100%;
+    height: auto; /* Duy trì tỷ lệ khi max-width hoạt động */
+    /* Kích thước cố định ban đầu */
+    width: 640px;
+    height: 360px;
+}
+
+/* Responsive đơn giản: nếu màn hình quá nhỏ, xếp chồng lên nhau */
+@media (max-width: 1330px) { /* Điều chỉnh breakpoint nếu cần */
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .video-container,
+    .canvas-container {
+       width: 90%; /* Chiếm phần lớn chiều rộng màn hình nhỏ */
+       max-width: 640px; /* Nhưng không vượt quá kích thước gốc */
+       flex: none; /* Tắt co giãn flex khi xếp chồng */
+    }
+    video, canvas {
+       width: 100%; /* Chiếm toàn bộ container cha */
+       height: auto; /* Để tỷ lệ tự điều chỉnh */
+    }
+}

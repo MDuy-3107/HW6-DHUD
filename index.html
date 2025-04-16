@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Edge Detection</title>
+    <!-- Liên kết đến file CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Demo Video và Canvas Edge Detection</h1>
+
+    <div class="container">
+        <div class="video-container">
+            <h2>Video Gốc</h2>
+            <video id="myVideo" width="640" height="360" controls crossorigin="anonymous">
+                <source src="L26_V409.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
+        </div>
+
+        <div class="canvas-container">
+            <h2>Canvas (Edge Detection)</h2>
+          
+            <canvas id="myCanvas" width="640" height="360"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
