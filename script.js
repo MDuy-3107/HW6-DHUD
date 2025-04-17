@@ -71,11 +71,6 @@ window.addEventListener('load', () => {
             return; // Dừng nếu video không chạy
         }
 
-        // Đảm bảo kích thước canvas khớp với kích thước render của video nếu responsive
-        // Hoặc giữ nguyên kích thước cố định nếu không responsive
-        // Trong ví dụ này, chúng ta giữ kích thước cố định như trong HTML/CSS
-        // canvas.width = video.videoWidth; // Nếu muốn lấy kích thước thực của video
-        // canvas.height = video.videoHeight;
 
         // 1. Vẽ frame video lên canvas
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
@@ -94,10 +89,7 @@ window.addEventListener('load', () => {
                 cancelAnimationFrame(animationFrameId);
                 animationFrameId = null;
             }
-            // Hiển thị lỗi cho người dùng nếu cần
-            // ctx.fillStyle = 'red';
-            // ctx.font = '16px sans-serif';
-            // ctx.fillText('Error processing video frame.', 10, 20);
+
             return;
         }
 
@@ -127,8 +119,6 @@ window.addEventListener('load', () => {
             cancelAnimationFrame(animationFrameId);
             animationFrameId = null; // Quan trọng: đặt lại ID
         }
-        // Tùy chọn: Xóa canvas hoặc hiển thị frame cuối cùng đã xử lý
-        // ctx.clearRect(0, 0, canvas.width, canvas.height);
     });
 
     // Xử lý khi không thể play video (ví dụ lỗi file)
